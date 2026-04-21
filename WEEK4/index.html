@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App (ES6)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+        canvas {
+            width: 80% !important;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<h2>Weather Graph (OpenWeather API)</h2>
+<input type="text" id="apikey" placeholder="Enter API Key"><br>
+<input type="text" id="city" placeholder="Enter City"><br>
+<button onclick="getWeather()">Get Weather</button>
+
+<canvas id="chart"></canvas>
+
+<script>
+    // Arrow Function + Async/Await
+    const getWeather = async () => {
+        const API_KEY = document.getElementById("apikey").value;
+        const city = document.getElementById("city").value;
+
+        if (!API_KEY || !city) {
+            alert("Enter API key and city");
+            return;
+        }
+
+        try {
+            const res = await fetch(
+                `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
+            );
+
+            const data = await res.json();
+
+            if (data.cod !== "200") {
+                alert("Invalid API Key or City");
+                return;
+            }
+
+            const temps = data.list.slice(0,5).map(item => item.main.temp);
+            const labels = data.list.slice(0,5).map(item => item.dt_txt);
+
+            drawChart(labels, temps);
+
+        } catch (err) {
+            console.log(err);
+            alert("Error fetching data");
+        }
+    };
+
+    // Callback Example
+    const processData = (data, callback) => {
+        callback(data);
+    };
+
+    // Draw Chart
+    const drawChart = (labels, temps) => {
+        processData(temps, (t) => {
+            new Chart(document.getElementById("chart"), {
+                type: "line",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Temperature (°C)",
+                        data: t,
+                        borderColor: "blue",
+                        fill: false
+                    }]
+                }
+            });
+        });
+    };
+</script>
+
+</body>
+</html>

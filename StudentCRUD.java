@@ -5,7 +5,7 @@ public class StudentCRUD {
 
     static final String URL="jdbc:mysql://localhost:3306/studentdb";
     static final String USER="root";
-    static final String PASS="password";
+    static final String PASS="root123";
 
     static Connection con;
 

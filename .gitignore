@@ -1,12 +1,12 @@
 # Java
 *.class
-target/
+**/target/
 *.jar
 *.war
 
 # Node / React
-node_modules/
-dist/
+**/node_modules/
+**/dist/
 
 # Editor / OS clutter
 .vscode/
