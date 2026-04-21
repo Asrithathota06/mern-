@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="./WEEK1.css">
     <title>Shopping Cart</title>
 </head>
@@ -20,9 +21,11 @@
     <div class="container">
         <div id="login" class="page">
             <h3>Login</h3>
-            <input id="loginUser" placeholder="Username">
-            <input id="loginPass" type="password" placeholder="Password">
-            <button onclick="login()">Login</button>
+            <form onsubmit="login(); return false;">
+                <input id="loginUser" placeholder="Username">
+                <input id="loginPass" type="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
         </div>
 
         
@@ -38,5 +41,6 @@
             <h4>Total</h4>
         </div>
     </div>
+    <script src="week1.js"></script>
 </body>
 </html>

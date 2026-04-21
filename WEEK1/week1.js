@@ -92,6 +92,21 @@ function register(){
     window.location.href="WEEK1.html";
 }
 
+function login(){
+    let username = document.getElementById('loginUser')?.value?.trim();
+    let pass = document.getElementById('loginPass')?.value;
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    let found = users.find(u => u.username === username && u.password === pass);
+
+    if(!found){
+        alert('Invalid username or password');
+        return;
+    }
+
+    alert('Login successful');
+    window.location.href = 'catalog.html';
+}
+
 function removeItem(i){
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
