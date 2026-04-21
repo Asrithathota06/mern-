@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xs:schema xmnls:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <xs:element name="bookstore">
         <xs:complexType>
@@ -12,7 +13,7 @@
                             <xs:element name="author" type="xs:string"/>
                             <xs:element name="price"  type="xs:float"/>
                         </xs:sequence>
-                    </xs:compllexType>
+                    </xs:complexType>
                 </xs:element>
             </xs:sequence>
         </xs:complexType>

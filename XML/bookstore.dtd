@@ -1,6 +1,6 @@
 <!ELEMENT bookstore (book+)>
 
-<!ELEMENT bookstore(book,author,price)>
+<!ELEMENT book (title,author,price)>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT author (#PCDATA)>
 <!ELEMENT price (#PCDATA)>
