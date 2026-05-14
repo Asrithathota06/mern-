@@ -1,12 +1,35 @@
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import org.xml.sax.*;
 import java.io.File;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
+
 public class DTDVal {
+    private static File resolveXmlFile(String[] args) {
+        if (args.length > 0) {
+            return new File(args[0]);
+        }
+
+        File local = new File("bookstore.xml");
+        if (local.exists()) {
+            return local;
+        }
+
+        File inAshfolder = new File("ashfolder/xml/bookstore.xml");
+        if (inAshfolder.exists()) {
+            return inAshfolder;
+        }
+
+        // Fall back to local name so error message remains clear.
+        return local;
+    }
+
     public static void main(String[] args) {
         try {
-            File xmlFile = new File(args.length > 0 ? args[0] : "bookstore.xml");
+            File xmlFile = resolveXmlFile(args);
             DocumentBuilderFactory f = DocumentBuilderFactory.newInstance();
             f.setValidating(true);
             DocumentBuilder b = f.newDocumentBuilder();
