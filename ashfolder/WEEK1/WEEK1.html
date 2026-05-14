@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./WEEK1.css">
+    <title>ShopEasy | Login</title>
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">Experiment 1</p>
+            <h1>ShopEasy</h1>
+        </div>
+        <nav class="nav-links">
+            <a class="active" href="WEEK1.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main class="shell">
+        <section class="panel auth-panel">
+            <div>
+                <p class="eyebrow">Welcome back</p>
+                <h2>Sign in to continue</h2>
+                <p class="muted">Use the registered username and password to view the catalog.</p>
+            </div>
+            <form onsubmit="login(); return false;" class="auth-form">
+                <input id="loginUser" placeholder="Username" autocomplete="username" required>
+                <input id="loginPass" type="password" placeholder="Password" autocomplete="current-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="week1.js"></script>
+</body>
+</html>

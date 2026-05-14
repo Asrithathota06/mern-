@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore SYSTEM "bookstore.dtd">
+
+<bookstore>
+    <book>
+    <title>Java Basics</title>
+    <author>James Gosling</author>
+    <price>489</price>
+    </book>
+
+    <book>
+    <title>Networking for Dummies</title>
+    <author>Ryan Gosling</author>
+    <price>299</price>
+    </book>
+</bookstore>

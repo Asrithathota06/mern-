@@ -24,7 +24,6 @@
 </head>
 <body>
 <h2>Weather Graph (OpenWeather API)</h2>
-<input type="text" id="apikey" placeholder="Enter API Key"><br>
 <input type="text" id="city" placeholder="Enter City"><br>
 <button onclick="getWeather()">Get Weather</button>
 
@@ -33,11 +32,11 @@
 <script>
     // Arrow Function + Async/Await
     const getWeather = async () => {
-        const API_KEY = document.getElementById("apikey").value;
+        const API_KEY = "86583a4fa46e0c89d17d27cd117ff9d7";
         const city = document.getElementById("city").value;
 
-        if (!API_KEY || !city) {
-            alert("Enter API key and city");
+        if (!city) {
+            alert("Enter city");
             return;
         }
 

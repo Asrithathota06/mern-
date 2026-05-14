@@ -1,0 +1,246 @@
+:root {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #dbe2ea;
+    --accent: #2563eb;
+    --accent-dark: #1d4ed8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, #eef3ff 0%, var(--bg) 100%);
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(219, 226, 234, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topbar h1,
+.panel h2,
+.total-row h3 {
+    margin: 0;
+}
+
+.eyebrow {
+    margin: 0 0 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.shell {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 2rem auto 3rem;
+}
+
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+    padding: 1.5rem;
+}
+
+.auth-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.auth-form {
+    display: grid;
+    gap: 0.8rem;
+}
+
+input {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 0.95rem 1rem;
+    border-radius: 12px;
+    font: inherit;
+}
+
+input:focus {
+    outline: 2px solid rgba(37, 99, 235, 0.18);
+    border-color: var(--accent);
+}
+
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 0.95rem 1rem;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: var(--accent-dark);
+}
+
+.muted {
+    color: var(--muted);
+    margin: 0.5rem 0 0;
+}
+
+.panel-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: end;
+    margin-bottom: 1.25rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    display: grid;
+    gap: 0.9rem;
+    padding: 0.9rem;
+}
+
+.card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card h4,
+.card p {
+    margin: 0;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+.price {
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.stack {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.flex,
+.cart-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.95rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #f9fbff;
+}
+
+.cart-row strong {
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.cart-row small {
+    color: var(--muted);
+}
+
+.remove-btn {
+    background: #e11d48;
+}
+
+.remove-btn:hover {
+    background: #be123c;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 760px) {
+    .topbar,
+    .panel-head,
+    .auth-panel,
+    .total-row {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topbar {
+        position: static;
+    }
+
+    .nav-links {
+        width: 100%;
+    }
+
+    .nav-links a {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+

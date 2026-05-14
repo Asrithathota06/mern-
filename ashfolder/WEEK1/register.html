@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy | Register</title>
+    <link rel="stylesheet" href="./WEEK1.css">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">Experiment 1</p>
+            <h1>ShopEasy</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="WEEK1.html">Login</a>
+            <a class="active" href="register.html">Register</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main class="shell">
+        <section class="panel auth-panel">
+            <div>
+                <p class="eyebrow">Create account</p>
+                <h2>Register a new user</h2>
+                <p class="muted">All fields are required. Passwords must match before saving.</p>
+            </div>
+            <form class="auth-form" onsubmit="register(); return false;">
+                <input id="regName" placeholder="Name" autocomplete="name" required>
+                <input id="regUser" placeholder="Username" autocomplete="username" required>
+                <input id="regPass" type="password" placeholder="Password" autocomplete="new-password" required>
+                <input id="regConfirmPass" type="password" placeholder="Confirm Password" autocomplete="new-password" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="week1.js"></script>
+</body>
+</html>

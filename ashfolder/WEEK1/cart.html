@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart - ShopEasy</title>
+<link rel="stylesheet" href="./WEEK1.css">
+</head>
+<body onload="loadCart()">
+<header>
+<h2>ShopEasy</h2>
+<nav>
+<a href="WEEK1.html">Login</a>
+<a href="register.html">Register</a>
+<a href="catalog.html">Catalog</a>
+<a href="cart.html">Cart</a>
+</nav>
+</header>
+
+<div class="container">
+<h3>Your Cart</h3>
+<div id="cartItems"></div>
+<h4 id="total"></h4>
+</div>
+
+<script src="week1.js"></script>
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ShopEasy | Cart</title>
+	<link rel="stylesheet" href="./WEEK1.css">
+</head>
+<body onload="loadCart()">
+	<header class="topbar">
+		<div>
+			<p class="eyebrow">Experiment 1</p>
+			<h1>ShopEasy</h1>
+		</div>
+		<nav class="nav-links">
+			<a href="WEEK1.html">Login</a>
+			<a href="register.html">Register</a>
+			<a href="catalog.html">Catalog</a>
+			<a class="active" href="cart.html">Cart</a>
+		</nav>
+	</header>
+
+	<main class="shell">
+		<section class="panel">
+			<div class="panel-head">
+				<div>
+					<p class="eyebrow">Cart</p>
+					<h2>Your items</h2>
+				</div>
+				<p class="muted">Review selected products before checkout.</p>
+			</div>
+			<div id="cartItems" class="stack"></div>
+			<div class="total-row">
+				<h3>Total</h3>
+				<h3 id="total">₹0</h3>
+			</div>
+		</section>
+	</main>
+
+	<script src="week1.js"></script>
+</body>
+</html>
